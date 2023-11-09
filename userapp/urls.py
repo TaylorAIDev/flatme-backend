@@ -1,0 +1,36 @@
+from django.urls import path, include
+from . import views
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenVerifyView
+
+urlpatterns = [
+    path('signup/', views.signup, name='signup'),
+    path('verifyEmail/', views.verifyEmail, name='verifyEmail'),
+    path('verifyPassword/', views.verifyPassword, name='verifyPassword'),
+    path('token', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/verify', TokenVerifyView.as_view(), name='token_verify'),
+    path('address/', views.address, name='address'),
+    path('kind/', views.kind, name='kind'),
+    path('roomsize/', views.roomsize, name='roomsize'),
+    path('rent/', views.rent, name='rent'),
+    path('available/', views.available, name='available'),
+    path('suitable/', views.suitable, name='suitable'),
+    path('flat/', views.flat, name='flat'),
+    path('provided/', views.provided, name='provided'),
+    path('roomIncluded/', views.roomIncluded, name='roomIncluded'),
+    path('image/', views.image, name='image'),
+    path('description/', views.description, name='description'),
+    path('room/getStart/', views.getStart, name='getStart'),
+    path('room/describeItem/', views.describeItem, name='describeItem'),
+    path('room/address/', views.roomAddress, name='roomAddress'),
+    path('room/living/', views.living, name='living'),
+    path('room/country/', views.country, name='country'),
+    path('room/myImage/', views.myImage, name='myImage'),
+    path('room/size/', views.size, name='size'),
+    path('room/preparePay/', views.preparePay, name='preparePay'),
+    path('room/kind/', views.kind, name='kind'),
+    path('room/room_size/', views.room_size, name='room_size'),
+    path('room/move_date/', views.move_date, name='move_date'),
+    path('room/coming/', views.coming, name='coming'),
+    path('room/description/', views.description_room, name='description'),
+    path('profile/', views.profile, name='profile'),
+]
